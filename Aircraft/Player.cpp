@@ -3,7 +3,7 @@
 #include "Aircraft.h"
 #include "NetworkProtocol.h"
 #include <iostream>
-#include "JoystickWindows.h"
+#include "Joystick.h"
 
 #include <SFML/Network/Packet.hpp>
 
@@ -44,7 +44,7 @@ struct AircraftFireTrigger
 		if (aircraft.getIdentifier() == aircraftID)
 		{
 			aircraft.fire();
-			JoystickWindows::Vibrate(10000, 10000, 5, aircraftID - 1);
+			Joystick::Vibrate(10000, 10000, 5, aircraftID - 1);
 		}
 	}
 

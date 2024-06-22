@@ -40,7 +40,7 @@ bool TitleState::update(sf::Time dt)
 		mShowText = !mShowText;
 		mTextEffectTime = sf::Time::Zero;
 	}
-	if (JoystickWindows::isConnected(0)) mText.setString("Press START");
+	if (Joystick::isConnected(0)) mText.setString("Press START");
 	else mText.setString("Press any key to start");
 
 	return true;
@@ -49,7 +49,7 @@ bool TitleState::update(sf::Time dt)
 bool TitleState::handleEvent(const sf::Event& event)
 {
 	// If any key is pressed, trigger the next screen
-	if (event.type == sf::Event::KeyReleased || event.type == sf::Event::MouseButtonPressed ||  JoystickWindows::isButtonPressed(0,7))
+	if (event.type == sf::Event::KeyReleased || event.type == sf::Event::MouseButtonPressed ||  Joystick::isButtonPressed(0,7))
 	{
 		requestStackPop();
 		requestStackPush(States::Menu);
