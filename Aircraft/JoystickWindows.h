@@ -1,5 +1,7 @@
 #pragma once
 #include <SFML/Window/Joystick.hpp>
+
+#if defined(_WIN32) || defined(_WIN64)
 #include <windows.h>
 #include <XInput.h>
 #include <chrono>
@@ -8,8 +10,9 @@
 #include <iostream>
 #include <vector>
 
-#pragma comment(lib, "Xinput.lib")
 
+#pragma comment(lib, "Xinput.lib")
+#endif
 
 class JoystickWindows : public sf::Joystick
 {

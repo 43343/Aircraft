@@ -5,11 +5,8 @@ class IpAddress
 {
 public:
 	explicit  IpAddress();
-	void set(std::string& ipAddressString);
-	std::string IpAddress::get() const
-	{
-		return m_ipAddressString;
-	}
+	void set(const std::string& ipAddressString);
+	std::string get() const;
 
 private:
 	std::string m_ipAddressString;

@@ -28,12 +28,12 @@ EnterIPState::EnterIPState(StateStack& stack, Context context)
 	auto connectButton = std::make_shared<GUI::Button>(context);
 	connectButton->setPosition(80.f, 500.f);
 	connectButton->setText("Connect");
-	connectButton->setCallback([inputIP, errorIP, context,  this]()
+	connectButton->setCallback([&, inputIP, errorIP, context,  this]()
 		{
 			if (isValidIpAddress(inputIP->getValue())) {
 				sf::IpAddress ip (inputIP->getValue());
 				requestStateClear();
-				context.ipAddress->set(inputIP->getValue());
+				context.ipAddress->set(ip.toString());
 				std::cout << "Assigned IP: " << ip.toString() << std::endl;
 				requestStackPush(States::JoinGame);
 			}
