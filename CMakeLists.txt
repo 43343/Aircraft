@@ -102,8 +102,8 @@ Aircraft/InputField.cpp
 Aircraft/InputField.h
 Aircraft/EnterIPState.cpp
 Aircraft/EnterIPState.h
-Aircraft/IPAddress.h
-Aircraft/IPAddress.cpp
+Aircraft/IpAddress.h
+Aircraft/IpAddress.cpp
 Aircraft/BinaryDataHandler.h
 Aircraft/BinaryDataHandler.cpp
 )
