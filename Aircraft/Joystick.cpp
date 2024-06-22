@@ -1,20 +1,20 @@
-#include "JoystickWindows.h"
+#include "Joystick.h"
 #include <functional>
 
-JoystickWindows::JoystickWindows()
+Joystick::Joystick()
 {
 }
 
-bool JoystickWindows::Vibrate(int leftVal, int rightVal, int durationMs, int controllerId)
+bool Joystick::Vibrate(int leftVal, int rightVal, int durationMs, int controllerId)
 {
 #if defined(_WIN32) || defined(_WIN64)
-    auto boundFunction = std::bind(&JoystickWindows::ThreadVibrate, leftVal, rightVal, durationMs, controllerId);
+    auto boundFunction = std::bind(&Joystick::ThreadVibrate, leftVal, rightVal, durationMs, controllerId);
     std::thread vibrationThread(boundFunction);
     vibrationThread.detach(); 
 #endif
     return true;
 }
-void JoystickWindows::ThreadVibrate(int leftVal, int rightVal, int durationMs, int controllerId)
+void Joystick::ThreadVibrate(int leftVal, int rightVal, int durationMs, int controllerId)
 {
 #if defined(_WIN32) || defined(_WIN64)
     XINPUT_VIBRATION vibration;

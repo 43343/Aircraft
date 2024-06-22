@@ -94,15 +94,15 @@ std::vector<KeyBinding::Action> KeyBinding::getRealtimeActions() const
 {
 	// Return all realtime actions that are currently active.
 	std::vector<Action> actions;
-	if (JoystickWindows::isConnected(joystickIdentificator)) {
+	if (Joystick::isConnected(joystickIdentificator)) {
 		for(auto pair : mJoyButtonMap)
 		{
 			// If key is pressed and an action is a realtime action, store it
-			if (JoystickWindows::isButtonPressed(joystickIdentificator, pair.first) && isRealtimeAction(pair.second))
+			if (Joystick::isButtonPressed(joystickIdentificator, pair.first) && isRealtimeAction(pair.second))
 				actions.push_back(pair.second);
 		}
-		float x = JoystickWindows::getAxisPosition(joystickIdentificator, JoystickWindows::X);
-		float y = JoystickWindows::getAxisPosition(joystickIdentificator, JoystickWindows::Y);
+		float x = Joystick::getAxisPosition(joystickIdentificator, Joystick::X);
+		float y = Joystick::getAxisPosition(joystickIdentificator, Joystick::Y);
 		std::cout << x << std::endl;
 		if (x > 50) actions.push_back(PlayerAction::MoveRight);
 		if (x < -50) actions.push_back(PlayerAction::MoveLeft);

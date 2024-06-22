@@ -6,7 +6,7 @@
 #include "SoundNode.h"
 #include "NetworkNode.h"
 #include "Utility.h"
-#include "JoystickWindows.h"
+#include "Joystick.h"
 #include <SFML/Graphics/RenderTarget.hpp>
 
 #include <algorithm>
@@ -252,7 +252,7 @@ void World::handleCollisions()
 
 			// Collision: Player damage = enemy's remaining HP
 			player.damage(enemy.getHitpoints());
-			JoystickWindows::Vibrate(20000, 20000, 150, player.getIdentifier() - 1);
+			Joystick::Vibrate(20000, 20000, 150, player.getIdentifier() - 1);
 			enemy.destroy();
 		}
 
@@ -275,7 +275,7 @@ void World::handleCollisions()
 
 			// Apply projectile damage to aircraft, destroy projectile
 			aircraft.damage(projectile.getDamage());
-			JoystickWindows::Vibrate(20000, 20000, 150, aircraft.getIdentifier() - 1);
+			Joystick::Vibrate(20000, 20000, 150, aircraft.getIdentifier() - 1);
 			projectile.destroy();
 		}
 	}

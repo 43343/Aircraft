@@ -1,5 +1,6 @@
 #include "GameState.h"
 #include "MusicPlayer.h"
+#include "Joystick.h"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -49,7 +50,7 @@ bool GameState::handleEvent(const sf::Event& event)
 	mPlayer.handleEvent(event, commands);
 
 	// Escape pressed, trigger the pause screen
-	if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) || JoystickWindows::isButtonPressed(0, 7))
+	if ((event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) || Joystick::isButtonPressed(0, 7))
 		requestStackPush(States::Pause);
 
 	return true;

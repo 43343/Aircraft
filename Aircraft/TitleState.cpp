@@ -1,7 +1,7 @@
 #include "TitleState.h"
 #include "Utility.h"
 #include "ResourceHolder.h"
-#include "JoystickWindows.h"
+#include "Joystick.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 
 

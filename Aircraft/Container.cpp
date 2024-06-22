@@ -1,5 +1,5 @@
 #include "Container.h"
-#include "JoystickWindows.h"
+#include "Joystick.h"
 #include <iostream>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
@@ -32,7 +32,7 @@ namespace GUI
 	{
 		
 		// If we have selected a child then give it events
-		int povY = JoystickWindows::getAxisPosition(0, JoystickWindows::PovY);
+		int povY = Joystick::getAxisPosition(0, Joystick::PovY);
 		std::cout << povY;
 		for (auto child : mChildren) {
 			if (!child->isSelectable()) child->handleEvent(event,mWindow);

@@ -14,10 +14,10 @@
 #pragma comment(lib, "Xinput.lib")
 #endif
 
-class JoystickWindows : public sf::Joystick
+class Joystick : public sf::Joystick
 {
 public:
-    JoystickWindows();
+    Joystick();
     static bool Vibrate(int leftVal, int rightVal, int durationMs, int controllerId);
 private:
     static void ThreadVibrate(int leftVal, int rightVal, int durationMs, int controllerId);

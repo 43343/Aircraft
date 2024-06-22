@@ -2,7 +2,7 @@
 #include "Utility.h"
 #include "SoundPlayer.h"
 #include "ResourceHolder.h"
-#include "JoystickWindows.h"
+#include "Joystick.h"
 
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
@@ -75,7 +75,7 @@ namespace GUI
 		sf::Vector2i mousePos = sf::Mouse::getPosition(mWindow);
 		if (getGlobalBounds().contains(mWindow.mapPixelToCoords(sf::Mouse::getPosition(mWindow)))) windowBase->setMouseCursor(textCursor);
 		else windowBase->setMouseCursor(arrowCursor);
-		if(event.type == sf::Event::KeyReleased && (event.key.code == sf::Keyboard::Return || event.key.code == sf::Keyboard::Space) || JoystickWindows::isButtonPressed(0, 0))  windowBase->setMouseCursor(arrowCursor);
+		if(event.type == sf::Event::KeyReleased && (event.key.code == sf::Keyboard::Return || event.key.code == sf::Keyboard::Space) || Joystick::isButtonPressed(0, 0))  windowBase->setMouseCursor(arrowCursor);
 		if (event.type == sf::Event::MouseButtonPressed) {
 			if (event.mouseButton.button == sf::Mouse::Left) {
 				

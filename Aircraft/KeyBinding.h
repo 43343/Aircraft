@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Window/Keyboard.hpp>
-#include "JoystickWindows.h"
+#include "Joystick.h"
 
 #include <map>
 #include <vector>

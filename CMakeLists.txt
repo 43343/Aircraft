@@ -96,8 +96,8 @@ Aircraft/Utility.h
 Aircraft/Utility.inl
 Aircraft/World.cpp
 Aircraft/World.h
-Aircraft/JoystickWindows.h
-Aircraft/JoystickWindows.cpp
+Aircraft/Joystick.h
+Aircraft/Joystick.cpp
 Aircraft/InputField.cpp
 Aircraft/InputField.h
 Aircraft/EnterIPState.cpp
