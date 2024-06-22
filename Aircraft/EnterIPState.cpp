@@ -31,10 +31,9 @@ EnterIPState::EnterIPState(StateStack& stack, Context context)
 	connectButton->setCallback([&, inputIP, errorIP, context,  this]()
 		{
 			if (isValidIpAddress(inputIP->getValue())) {
-				sf::IpAddress ip (inputIP->getValue());
 				requestStateClear();
-				context.ipAddress->set(ip.toString());
-				std::cout << "Assigned IP: " << ip.toString() << std::endl;
+				context.ipAddress->set(inputIP->getValue());
+				std::cout << "Assigned IP: " << inputIP->getValue() << std::endl;
 				requestStackPush(States::JoinGame);
 			}
 			else errorIP->setColor(sf::Color::Red);
